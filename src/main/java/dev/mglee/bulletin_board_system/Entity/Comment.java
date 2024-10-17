@@ -15,7 +15,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Entity
 @Table
@@ -24,20 +23,20 @@ import lombok.ToString;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Post {
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column
-    private String title;
-
-    @Column
-    private String content;
+    String content;
 
     @ManyToOne
-    @JoinColumn
-    private Member author;
+    @JoinColumn(name = "author_id")
+    Member author;
 
+    @ManyToOne
+    @JoinColumn(name = "post_id")
+    Post post;
 }

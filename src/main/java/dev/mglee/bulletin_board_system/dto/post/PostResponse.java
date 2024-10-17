@@ -1,4 +1,4 @@
-package dev.mglee.bulletin_board_system.dto;
+package dev.mglee.bulletin_board_system.dto.post;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
